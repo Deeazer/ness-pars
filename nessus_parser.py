@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Парсер отчетов сканера Nessus
-Извлекает CVE, Risk, Host, Protocol, Port, Name, Synopsis, Description, CVSS 3.0
+Извлекает CVE, Risk, Host, Protocol, Port, Name, Synopsis, Description, CVSS 3.0, Solution
 """
 
 import csv
@@ -42,6 +42,7 @@ def parse_nessus_csv(input_file, output_file):
                     name = row.get('Name', '').strip()
                     synopsis = row.get('Synopsis', '').strip()
                     description = row.get('Description', '').strip()
+                    solution = row.get('Solution', '').strip()
                     cvss_30 = row.get('CVSS v3.0 Base Score', '').strip()
                     
                     # Пропускаем записи без уязвимостей (Risk = None)
@@ -84,6 +85,10 @@ def parse_nessus_csv(input_file, output_file):
                     # Description
                     if description:
                         outfile.write(f"Description: {description}\n")
+                    
+                    # Solution
+                    if solution:
+                        outfile.write(f"Solution: {solution}\n")
                     
                     # CVSS 3.0
                     if cvss_30:

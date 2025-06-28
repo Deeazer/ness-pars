@@ -13,6 +13,7 @@
   - Name (название уязвимости)
   - Synopsis (краткое описание)
   - Description (подробное описание)
+  - Solution (рекомендации по устранению)
   - CVSS 3.0 (оценка уязвимости)
 
 - Фильтрация записей без уязвимостей (Risk = None)
@@ -70,6 +71,7 @@ Protocol/Port: tcp/80
 Name: [Original vulnerability name]
 Synopsis: [Original synopsis]
 Description: [Original description]
+Solution: [Recommended solution]
 CVSS 3.0: 8.5
 
 ==================================================
